@@ -1,0 +1,7 @@
+<launch>
+
+        <node name="listener_cpp" pkg="lab2_package" type="listener.py" output="screen">
+            <remap from="chatter" to="new_topic"/>
+        </node>
+
+</launch>

@@ -1,0 +1,6 @@
+<launch>
+
+<node name="tl" pkg="lab3_pkg" type="polynominal.py" output="screen"/>
+<node name="listener" pkg="lab3_pkg" type="summing.py" output="screen"/>
+   
+</launch>

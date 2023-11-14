@@ -1,0 +1,15 @@
+<launch>
+    <arg name="rviz" default="false" />
+    <arg name="gazebo_gui" default="true"/>
+    <include file="$(find super_robot_package)/launch/turtlebot3_world.launch">
+    <arg name="x_pos" value="-2.2"/>
+    <arg name="gazebo_gui_1" value="$(arg gazebo_gui)"/>
+    
+    </include>
+    
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
+    <param name="publish_frequency" type="double" value="50.0" />
+    </node>
+    <node if="$(arg rviz)" pkg="rviz" type="rviz" name="rviz" args="-d $(find super_robot_package)/rviz/sim_initial.rviz" />
+    
+</launch>

@@ -1,0 +1,15 @@
+<launch>
+<arg name="new_time_topic" default="time_topic" />
+<arg name="new_overflow_topic" default="overflow_topic" />
+<group ns="new_ns1">
+    <include file="$(find lab3_pkg)/launch/another_one.launch" >
+    <arg name="new_name1" value="$(arg new_time_topic)" />
+    <arg name="new_name2" value="$(arg new_overflow_topic)" />
+    </include>
+    <node name="talker" pkg="lab3_pkg" type="talker.py" output="screen">
+    <remap from="time_topic" to="$(arg new_time_topic)"/>
+    <remap from="overflow_topic" to="$(arg new_overflow_topic)"/>
+    </node>
+</group>
+    
+</launch>

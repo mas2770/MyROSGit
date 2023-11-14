@@ -1,0 +1,10 @@
+<launch>
+  <arg name="rviz" default="false" />
+
+  <include file="$(find super_robot_package)/launch/turtlebot3_sim_start.launch" />
+  <include file="$(find super_robot_package)/launch/turtlebot3_my_gmapping.launch" />
+  <include file="$(find super_robot_package)/launch/turtlebot3_move_base.launch" />
+
+  <node if="$(arg rviz)" pkg="rviz" type="rviz" name="rviz1" args="-d $(find super_robot_package)/rviz/sim_mapping.rviz" />   
+  <node pkg="rviz" type="rviz" name="rviz1" /> 
+</launch>

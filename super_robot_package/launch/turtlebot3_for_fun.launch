@@ -1,0 +1,10 @@
+<launch>
+    <arg name="gazebo_gui" default="true"/>
+    <include file="$(find super_robot_package)/launch/turtlebot3_world.launch">
+    <arg name="x_pos" value="-2.2"/>
+    <arg name="gazebo_gui_1" value="$(arg gazebo_gui)"/>
+    
+    </include>
+    <include file="$(find super_robot_package)/launch/turtlebot3_slam.launch" />
+    <include file="$(find super_robot_package)/launch/move_base.launch" />
+</launch>

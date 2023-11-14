@@ -1,0 +1,10 @@
+<launch>
+<arg name="num1" default="1.0" />
+<arg name="num2" default="1.0" />
+<arg name="num3" default="1.0" /> 
+<node name="talker" pkg="lab3_pkg" type="req.py" output="screen">
+    <param name="num_1" value="$(arg num1)" />
+    <param name="num_2" value="$(arg num2)" />
+    <param name="num_3" value="$(arg num3)" />
+</node> 
+</launch>
